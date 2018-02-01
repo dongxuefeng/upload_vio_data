@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://10.172.134.9:9080/trffweb/services/TmriTpAccess" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://10.172.134.9:9080/trffweb/services/TmriTpAccess" xmlns:intf="http://10.172.134.9:9080/trffweb/services/TmriTpAccess" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="writeTpobjectResponse">
+
+      <wsdl:part name="writeTpobjectReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTpobjectResponse">
+
+      <wsdl:part name="queryTpobjectReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeTpobjectRequest">
+
+      <wsdl:part name="dyrjbh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkid" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTpobjectRequest">
+
+      <wsdl:part name="dyrjbh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkid" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TmriJaxRpcTpAccess">
+
+      <wsdl:operation name="queryTpobject" parameterOrder="dyrjbh jkid UTF8XmlDoc">
+
+         <wsdl:input message="impl:queryTpobjectRequest" name="queryTpobjectRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryTpobjectResponse" name="queryTpobjectResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeTpobject" parameterOrder="dyrjbh jkid UTF8XmlDoc">
+
+         <wsdl:input message="impl:writeTpobjectRequest" name="writeTpobjectRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:writeTpobjectResponse" name="writeTpobjectResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TmriTpAccessSoapBinding" type="impl:TmriJaxRpcTpAccess">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryTpobject">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryTpobjectRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.framework.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryTpobjectResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/TmriTpAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeTpobject">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="writeTpobjectRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.framework.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="writeTpobjectResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/TmriTpAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TmriJaxRpcTpAccessService">
+
+      <wsdl:port binding="impl:TmriTpAccessSoapBinding" name="TmriTpAccess">
+
+         <wsdlsoap:address location="http://10.172.134.9:9080/trffweb/services/TmriTpAccess"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

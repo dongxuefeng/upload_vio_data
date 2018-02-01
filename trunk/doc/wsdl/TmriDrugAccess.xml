@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess" xmlns:intf="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="queryObjectDrugResponse">
+
+      <wsdl:part name="queryObjectDrugReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeObjectDrugRequest">
+
+      <wsdl:part name="xtlb" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkxlh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkid" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryObjectDrugRequest">
+
+      <wsdl:part name="xtlb" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkxlh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="jkid" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeObjectDrugResponse">
+
+      <wsdl:part name="writeObjectDrugReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TmriJaxRpcDrugAccess">
+
+      <wsdl:operation name="queryObjectDrug" parameterOrder="xtlb jkxlh jkid UTF8XmlDoc">
+
+         <wsdl:input message="impl:queryObjectDrugRequest" name="queryObjectDrugRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryObjectDrugResponse" name="queryObjectDrugResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeObjectDrug" parameterOrder="xtlb jkxlh jkid UTF8XmlDoc">
+
+         <wsdl:input message="impl:writeObjectDrugRequest" name="writeObjectDrugRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:writeObjectDrugResponse" name="writeObjectDrugResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TmriDrugAccessSoapBinding" type="impl:TmriJaxRpcDrugAccess">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryObjectDrug">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryObjectDrugRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.framework.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryObjectDrugResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeObjectDrug">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="writeObjectDrugRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.framework.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="writeObjectDrugResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TmriJaxRpcDrugAccessService">
+
+      <wsdl:port binding="impl:TmriDrugAccessSoapBinding" name="TmriDrugAccess">
+
+         <wsdlsoap:address location="http://10.172.134.9:9080/trffweb/services/TmriDrugAccess"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

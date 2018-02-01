@@ -1,0 +1,13 @@
+<XmlConfig>
+  <system>
+    <service.name>ehl.itgs.uploaddata</service.name>
+  </system>
+  <dir>
+    <export>d:\ehl_exp\</export>
+  </dir>
+  <database>
+    <name>atmsfg</name>
+    <user>tgs_admin</user>
+    <password>ehl1234</password>
+  </database>
+</XmlConfig>

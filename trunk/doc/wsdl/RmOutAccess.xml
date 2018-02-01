@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/rmweb/services/RmOutAccess" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8080/rmweb/services/RmOutAccess" xmlns:intf="http://localhost:8080/rmweb/services/RmOutAccess" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="writeObjectOutRequest">
+
+      <wsdl:part name="xtlb" type="xsd:string"/>
+
+      <wsdl:part name="jkxlh" type="xsd:string"/>
+
+      <wsdl:part name="jkid" type="xsd:string"/>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryObjectOutResponse">
+
+      <wsdl:part name="queryObjectOutReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryObjectOutRequest">
+
+      <wsdl:part name="xtlb" type="xsd:string"/>
+
+      <wsdl:part name="jkxlh" type="xsd:string"/>
+
+      <wsdl:part name="jkid" type="xsd:string"/>
+
+      <wsdl:part name="UTF8XmlDoc" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="writeObjectOutResponse">
+
+      <wsdl:part name="writeObjectOutReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RmJaxRpcOutAccess">
+
+      <wsdl:operation name="queryObjectOut" parameterOrder="xtlb jkxlh jkid UTF8XmlDoc">
+
+         <wsdl:input message="intf:queryObjectOutRequest" name="queryObjectOutRequest"/>
+
+         <wsdl:output message="intf:queryObjectOutResponse" name="queryObjectOutResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeObjectOut" parameterOrder="xtlb jkxlh jkid UTF8XmlDoc">
+
+         <wsdl:input message="intf:writeObjectOutRequest" name="writeObjectOutRequest"/>
+
+         <wsdl:output message="intf:writeObjectOutResponse" name="writeObjectOutResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RmOutAccessSoapBinding" type="intf:RmJaxRpcOutAccess">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryObjectOut">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryObjectOutRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.rm.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryObjectOutResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/rmweb/services/RmOutAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="writeObjectOut">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="writeObjectOutRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://endpoint.axis.rm.tmri.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="writeObjectOutResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/rmweb/services/RmOutAccess" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RmJaxRpcOutAccessService">
+
+      <wsdl:port binding="intf:RmOutAccessSoapBinding" name="RmOutAccess">
+
+         <wsdlsoap:address location="http://10.177.98.6:9080/rminf/services/RmOutAccess"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

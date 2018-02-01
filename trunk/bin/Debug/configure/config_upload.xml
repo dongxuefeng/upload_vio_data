@@ -1,0 +1,19 @@
+<XmlConfig>
+  <system>
+    <service.name>ehl.itgs.uploaddata</service.name>
+  </system>
+  <dir>
+    <export>d:\ehl_exp\</export>
+  </dir>
+  <database>
+    <name>atmsfg</name>
+    <user>tgs_admin</user>
+    <password>ehl1234</password>
+    <querysql> SELECT   t.XH,t.fxbh,t.sbbj,t.cdbh,decode(t.HPZL,'01',3,'02',3,'23',4,'24',5,'25',4,'13',6,'14',6,3) AS CLFL, decode(t.HPZL,'23','02','24','02','05','02','25','07','26','07',HPZL) AS HPZL,  t.HPHM, NVL(T.CLLX,decode(t.HPZL,'13','H41','K31')) AS JTFS,  NVL(T.FZJG,'陕K')AS FZJG, decode(t.SJLY,'1',1,'2',2,'3',3,'4',4,'5',5,'6',6,'8',9,'9',9)AS SJLY, TO_Char(t.WFSJ,'yyyy-mm-dd') as WFRQ, TO_CHAR(t.WFSJ,'yyyy-mm-dd hh24:mi:ss') as WFSJ, t1.fxcddbh as wfdd,t1.sbbh as sbbh, t1.ddmc  as wfdz, t.WFXW, t.CSBJ,CJJG, f_get_value ('WFXWMS','T_TMS_PECCNACY_TYPE','WFXW',t.WFXW) AS WFNR, '' as zqmj, nvl(t.jdssyr,'未知')as jdssyr,t.dh,t.lxfs,t.zsxxdz,t.zsxzqh, t1.xzqh as xzqh , t.clpp,t.cllx,t.csys,t.fdjh,t.clsbdh,t.clsd,F_GET_LIMITSPEED(t.wfdd,t.hpzl) as clxs,t.jcbj,NVL(t.SYXZ,'A') AS SYXZ,(select 'http://'||zjwjip||zjwjlj  from  tgs_admin.t_tgs_capture where xh = t.xh and zjwjsx=1) as jpgfilename1,(select 'http://'||zjwjip||zjwjlj  from  tgs_admin.t_tgs_capture where xh = t.xh and zjwjsx=2) as jpgfilename2,(select 'http://'||zjwjip||zjwjlj  from  tgs_admin.t_tgs_capture where xh = t.xh and zjwjsx=3) as jpgfilename3 FROM   t_tms_peccancy t  left join t_tgs_location t1 on t.WFDD = t1.ddbh  where t.CSBJ = '0' and t.WFSJ&gt;= sysdate-30  and t.WFDD in ('620031002000',620031018000)  and rownum &lt; 50</querysql>
+  </database>
+  <uplaod_webservice>
+    <data>
+      <url>http://10.177.98.6:9080/rminf/services/RmOutAccess?wsdl</url>
+    </data>
+  </uplaod_webservice>
+</XmlConfig>

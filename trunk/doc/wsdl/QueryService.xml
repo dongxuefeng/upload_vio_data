@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://10.172.134.9:9080/trffweb/services/QueryService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://10.172.134.9:9080/trffweb/services/QueryService" xmlns:intf="http://10.172.134.9:9080/trffweb/services/QueryService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://10.172.134.9:9080/trffweb/services/QueryService"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="mapItem">
+    <sequence>
+     <element name="key" nillable="true" type="xsd:anyType"/>
+     <element name="value" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="Map">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="apachesoap:mapItem"/>
+    </sequence>
+   </complexType>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://10.172.134.9:9080/trffweb/services/QueryService" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:anyType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="queryTableResponse">
+
+      <wsdl:part name="queryTableReturn" type="apachesoap:Map">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTableListResponse">
+
+      <wsdl:part name="queryTableListReturn" type="impl:ArrayOf_xsd_anyType">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTableListRequest">
+
+      <wsdl:part name="bh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="key" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="value" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="sft" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTableRequest">
+
+      <wsdl:part name="bh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="key" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="value" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="sft" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="QueryService">
+
+      <wsdl:operation name="queryTable" parameterOrder="bh key value sft">
+
+         <wsdl:input message="impl:queryTableRequest" name="queryTableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryTableResponse" name="queryTableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryTableList" parameterOrder="bh key value sft">
+
+         <wsdl:input message="impl:queryTableListRequest" name="queryTableListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryTableListResponse" name="queryTableListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QueryServiceSoapBinding" type="impl:QueryService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryTable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryTableRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://dao.irss.nterc.cn.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryTableResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/QueryService" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryTableList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryTableListRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://dao.irss.nterc.cn.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryTableListResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.172.134.9:9080/trffweb/services/QueryService" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QueryServiceService">
+
+      <wsdl:port binding="impl:QueryServiceSoapBinding" name="QueryService">
+
+         <wsdlsoap:address location="http://10.172.134.9:9080/trffweb/services/QueryService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

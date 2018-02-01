@@ -1,0 +1,7 @@
+select t.*, t.rowid,
+(select 'http://' || zjwjip || zjwjlj
+          from tgs_admin.t_tgs_capture
+         where xh = t.xh
+           and zjwjsx = 1) as jpgfilename1
+            from t_tgs_passcar t
+where kkid = '610300001040' and gwsj >= sysdate-30 and rownum <= 100

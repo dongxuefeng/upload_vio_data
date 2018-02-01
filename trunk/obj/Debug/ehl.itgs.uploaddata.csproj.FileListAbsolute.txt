@@ -1,0 +1,17 @@
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.exe.config
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.exe
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.pdb
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddate.service.Service.resources
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.Properties.Resources.resources
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.csproj.GenerateResource.Cache
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.exe
+D:\users\tony\documents\visual studio 2013\Projects\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.pdb
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.exe.config
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.exe
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\bin\Debug\ehl.itgs.uploaddata.pdb
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.csprojResolveAssemblyReference.cache
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddate.service.Service.resources
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.Properties.Resources.resources
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.csproj.GenerateResource.Cache
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.exe
+D:\ehl\workspace\ehl.itgs.uploaddata\ehl.itgs.uploaddata\obj\Debug\ehl.itgs.uploaddata.pdb
